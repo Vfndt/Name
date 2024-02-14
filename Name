@@ -1,0 +1,29 @@
+br>
+#include < stdio.h><br>
+#define N 10<br>
+main() {<br>
+    int arr[N], sum;<br>
+    char i,neg;<br>
+    srand(time(NULL));<br>
+    for (i=0; i< N; i++) {<br>
+        arr[i] = rand()%30 - 5;<br>
+        printf("%d ", arr[i]);<br>
+    }<br>
+    printf("\n");<br>
+    <br>
+    neg = -1;<br>
+    for (i=0; i < N; i++) {<br>
+        if (arr[i] < 0) {<br>
+            neg = i;<br>
+            break;<br>
+        }<br>
+    }<br>
+<br>
+    if (neg == -1) printf("нет отрицательных\n");<br>
+    else {<br>
+        printf("номер I-го отриц.: %d\n", neg+1);<br>
+        sum = 0;<br>
+        for (i=neg+1; i< N; i++) sum += abs(arr[i]);<br>
+        printf("сумма: %d\n", sum);<br>
+    }<br>
+}<br>
